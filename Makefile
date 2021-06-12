@@ -1,5 +1,7 @@
 TOP_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
+all:	create status deploy logs
+
 create:
 	$(TOP_DIR)/scripts/install-kind.sh && \
 	$(TOP_DIR)/scripts/create-cluster.sh && \
@@ -19,7 +21,8 @@ logs:
 	$(TOP_DIR)/scripts/tail-myhello-pod.sh
 
 deploy:
-	$(TOP_DIR)/scripts/deploy-myhello-pod.sh
+	$(TOP_DIR)/scripts/deploy-myhello-pod.sh && \
+	echo "myhello should be accessible on http://<your machine>:80/myhello."
 
 destroy:
 	$(TOP_DIR)/scripts/destroy-cluster.sh
