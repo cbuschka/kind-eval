@@ -31,24 +31,32 @@ spec:
             port:
               number: 8080
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: myhello
-  namespace: default
+  name: myhello-deployment
   labels:
     app: myhello
 spec:
-  containers:
-    - image: cbuschka/myhello:4.0
-      imagePullPolicy: IfNotPresent
-      name: myhello
-      ports:
-        - containerPort: 8080
-      env:
-        - name: PORT
-          value: "8080"
-  restartPolicy: Always
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myhello
+  template:
+    metadata:
+      labels:
+        app: myhello
+    spec:
+      containers:
+      - image: cbuschka/myhello:4.0
+        imagePullPolicy: IfNotPresent
+        name: myhello
+        ports:
+          - containerPort: 8080
+        env:
+          - name: PORT
+            value: "8080"
+      restartPolicy: Always
 EOB
 
 kubectl --context kind-${CLUSTER_NAME} apply -f /tmp/pod-deployment.yml
