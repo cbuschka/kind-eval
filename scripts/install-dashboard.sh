@@ -4,6 +4,7 @@ PROJECT_DIR=$(cd `dirname $0`/.. && pwd -P)
 
 . ${PROJECT_DIR}/configrc
 
+kubectl --context kind-${CLUSTER_NAME} apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
 
 cat - > /tmp/dashboard-security-config.yml <<EOB
 apiVersion: v1
@@ -26,5 +27,3 @@ subjects:
   namespace: kubernetes-dashboard
 EOB
 kubectl --context kind-${CLUSTER_NAME} apply -f /tmp/dashboard-security-config.yml
-
-kubectl --context kind-${CLUSTER_NAME} apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml

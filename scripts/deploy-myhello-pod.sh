@@ -60,3 +60,5 @@ spec:
 EOB
 
 kubectl --context kind-${CLUSTER_NAME} apply -f /tmp/pod-deployment.yml
+
+echo "myhello should be accessible on http://127.0.0.1:80/myhello in some moments."

@@ -22,8 +22,7 @@ logs:
 	$(TOP_DIR)/scripts/tail-myhello-pod.sh
 
 deploy:
-	$(TOP_DIR)/scripts/deploy-myhello-pod.sh && \
-	echo "myhello should be accessible on http://<your machine>:80/myhello."
+	$(TOP_DIR)/scripts/deploy-myhello-pod.sh
 
 proxy:
 	$(TOP_DIR)/scripts/start-proxy.sh

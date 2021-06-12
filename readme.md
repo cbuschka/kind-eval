@@ -29,6 +29,9 @@ make status
 make logs
 ```
 
+### Access service
+Open http://127.0.0.1:80/myhello
+
 ### Run proxy (runs in foreground)
 ```
 make proxy
@@ -59,6 +62,7 @@ make destroy
 
 * Kind quickstart guide: https://kind.sigs.k8s.io/docs/user/quick-start
 * Kind ingress config: https://kind.sigs.k8s.io/docs/user/ingress/
+* Kind cluster config: https://kind.sigs.k8s.io/docs/user/configuration/#clusterwide-options
 * Install dashboard: https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 * Dashboard auth: https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 * Deployment descriptor format: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
