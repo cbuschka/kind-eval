@@ -49,6 +49,19 @@ Open ```http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/ht
 make destroy
 ```
 
+## TODOs
+
+* add letsencrypt support - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes
+
+## References
+
+* Kind quickstart guide: https://kind.sigs.k8s.io/docs/user/quick-start
+* Kind ingress config: https://kind.sigs.k8s.io/docs/user/ingress/
+* Install dashboard: https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+* Dashboard auth: https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+* Deployment descriptor format: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+* Kubectl cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/#interacting-with-running-pods
+
 ## License
 
 MIT0
