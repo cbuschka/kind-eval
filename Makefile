@@ -6,6 +6,8 @@ create:
 	$(TOP_DIR)/scripts/install-nginx-ingress.sh
 
 status:
+	echo "Docker containers..." && \
+	docker ps && \
 	echo "Cluster info..." && \
 	$(TOP_DIR)/scripts/cluster-info.sh && \
 	echo "All services..." && \
