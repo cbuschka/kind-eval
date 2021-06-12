@@ -52,6 +52,8 @@ make destroy
 ## TODOs
 
 * add letsencrypt support - https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes
+* namespace for app
+* deployment via ssh and kind load image-archive
 
 ## References
 
