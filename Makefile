@@ -5,6 +5,7 @@ all:	create status deploy logs
 create:
 	$(TOP_DIR)/scripts/install-kind.sh && \
 	$(TOP_DIR)/scripts/create-cluster.sh && \
+	$(TOP_DIR)/scripts/install-dashboard.sh && \
 	$(TOP_DIR)/scripts/install-nginx-ingress.sh
 
 status:
@@ -23,6 +24,12 @@ logs:
 deploy:
 	$(TOP_DIR)/scripts/deploy-myhello-pod.sh && \
 	echo "myhello should be accessible on http://<your machine>:80/myhello."
+
+proxy:
+	$(TOP_DIR)/scripts/start-proxy.sh
+
+get-dashboard-token:
+	$(TOP_DIR)/scripts/get-dashboard-token.sh
 
 destroy:
 	$(TOP_DIR)/scripts/destroy-cluster.sh

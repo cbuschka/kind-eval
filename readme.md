@@ -29,6 +29,21 @@ make status
 make logs
 ```
 
+### Run proxy (runs in foreground)
+```
+make proxy
+```
+
+### Open dashboard
+
+* Get a bearer token to login to dashboard
+
+```
+make get-dashboard-token
+```
+
+Open ```http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/``` with your browser.
+
 ### Cleanup
 ```
 make destroy
